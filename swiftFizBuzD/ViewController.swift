@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     }
 }
 
-protocol Pintable {
+protocol Pintable { //FIXME: maybe no need for generics
     associatedtype resultT
     func canPrint(resultT: resultT)
 }
