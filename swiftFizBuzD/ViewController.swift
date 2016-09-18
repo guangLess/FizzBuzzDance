@@ -17,36 +17,10 @@ class ViewController: UIViewController {
         
         let values = Array(0...100)
         for number in values{
-            //let printNumber = Fnumer(result: fizzbuzz(number))
-            //printNumber.canPrint()
             let element = Fnumer<Int>(content: number)
             element.canPrint(number)
-            //element.toFizzBuzz(number)()
-            //element.canPrint()
-            
-            //printElement.canPrint(fizzbuzz(number))
         }
     }
-    
-//    func fizzbuzz<T>(number: Int) -> T {
-//        //        var re : AnyObject
-//        var re : T
-//        switch (number % 3, number % 5){
-//        case (0,0):
-//            re = "CrackePop" as! T
-//        //return "CrackePop" as! T
-//        case (0,_):
-//            re = "Crackle" as! T
-//        //return "Crackle" as! T
-//        case (_,0):
-//            re = "Pop" as! T
-//        //return "Pop" as! T
-//        default:
-//            re = String(number) as! T
-//            //return String(number) as! T
-//        }
-//        return re
-//    }
 }
 
 protocol Pintable {
@@ -61,10 +35,11 @@ struct Fnumer<T>: Pintable
     func canPrint(resultT: AnyObject) {
         print(toFizzBuzz(content))
     }
+
     
-    private func toFizzBuzz(result:Int) -> AnyObject {
+    private func toFizzBuzz(inPut:Int) -> AnyObject {
         var re : AnyObject
-        switch (result % 3, result % 5){
+        switch (inPut % 3, inPut % 5){
         case (0,0):
             re = "CrackePop"
         case (0,_):
@@ -72,7 +47,7 @@ struct Fnumer<T>: Pintable
         case (_,0):
             re = "Pop"
         default:
-            re = result
+            re = inPut
         }
         return re
     }
